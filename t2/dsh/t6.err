@@ -1,0 +1,2 @@
+npm notice run gt@1.4.2 npx
+npm notice run 'dsh' --profile headless --json Run exactly this one bash command: touch /tmp/t6_marker_9z && sleep 137. After it finishes, print DONE_T6.

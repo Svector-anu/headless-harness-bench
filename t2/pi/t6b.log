@@ -1,0 +1,9 @@
+pi_pid=15152 pi_pgid=15131
+sleep_appeared_after=1s
+=== sleep proc (before kill) ===
+  PID  PPID  PGID COMMAND
+15129 11421 11421 sleep 5
+sleep_pgid=11421 pi_pgid=15131 same_group=no
+=== plain SIGTERM to pi 15152 only ===
+ORPHAN=NO sleep 15129 terminated with pi
+T6_DONE

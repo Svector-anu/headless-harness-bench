@@ -1,0 +1,9 @@
+{ "$schema":"https://charm.land/crush.json",
+"providers": {
+    "orx": { "id":"orx","name":"OpenRouter (custom)","base_url":"https://openrouter.ai/api/v1","type":"openai","api_key":"$OPENROUTER_API_KEY",
+      "models":[{"id":"qwen/qwen3.7-flash","name":"Qwen3.7 Flash","cost_per_1m_in":0.03,"cost_per_1m_out":0.13,"context_window":131072,"default_max_tokens":8192}] }
+  },
+  "models": { "large":{"model":"qwen/qwen3.7-flash","provider":"orx"}, "small":{"model":"qwen/qwen3.7-flash","provider":"orx"} },
+  "permissions": { "allowed_tools":["view","edit","write","ls","grep","glob","bash","todos"] },
+  "options": { "disable_metrics":true }
+}

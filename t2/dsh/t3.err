@@ -1,0 +1,2 @@
+npm notice run gt@1.4.2 npx
+npm notice run 'dsh' --profile headless --json Use the bash tool to run: echo HELLO_FROM_BASH_9Z. Then report the exact output. If you cannot run bash, say EXACTLY: BASH_UNAVAILABLE. Finally print DONE_T3.

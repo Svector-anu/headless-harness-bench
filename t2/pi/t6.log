@@ -1,0 +1,7 @@
+pi_pid=11220
+sleep_appeared_after=1s sleep_pid=11220
+  PID  PPID  PGID COMMAND
+11220 11204 11199 node /Users/aaron/.local/state/fnm_multishells/57442_1789668144618/bin/pi -p --mode json --provider openrouter --model qwen/qwen3.7-flash --thinking off -t bash Run this exact bash command using the bash tool: sleep 60. After it completes, print DONE_GT.
+killing pi 11220 with plain SIGTERM
+ORPHAN=NO sleep 11220 died with pi
+T6_DONE

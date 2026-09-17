@@ -1,0 +1,1 @@
+In cli.js, add a --version flag: when run with --version it prints the version field read from package.json, otherwise prints hello. Edit only cli.js. When finished, print the exact token DONE_GT on its own line.

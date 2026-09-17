@@ -1,0 +1,5 @@
+{"type":"session","version":3,"id":"01a0b0c8-d10c-706a-81b7-48e6f47b44bf","timestamp":"2026-09-17T19:12:25.869Z","cwd":"/Users/aaron/Downloads/harness-bench/t2/pi/scratch"}
+{"type":"agent_start"}
+{"type":"turn_start"}
+{"type":"message_start","message":{"role":"user","content":[{"type":"text","text":"Use the bash tool to run exactly: sleep 60 && echo LATE_GT. Then print DONE_GT."}],"timestamp":1789672345893}}
+{"type":"message_end","message":{"role":"user","content":[{"type":"text","text":"Use the bash tool to run exactly: sleep 60 && echo LATE_GT. Then print DONE_GT."}],"timestamp":1789672345893}}

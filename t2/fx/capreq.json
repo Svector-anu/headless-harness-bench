@@ -1,0 +1,7 @@
+[
+  {
+    "method": "GET",
+    "url": "/coding-agent/v1/models",
+    "body": ""
+  }
+]

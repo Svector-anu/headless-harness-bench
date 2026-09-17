@@ -1,0 +1,7 @@
+{"type":"session","sessionId":"session-e371c97a-ac2b-42fa-8dc3-3a6b900a3451","cwd":"/Users/aaron/Downloads/harness-bench/t2/dsh/fixture"}
+{"type":"status","phase":"turn_start","turn":1}
+{"type":"status","phase":"step_start","turn":1,"step":1}
+{"type":"text","text":"I don't have access to a bash tool. The available tools are: create_goal, edit, exit_plan_mode, get_goal, glob, grep, interrupt_agent, job_kill, job_list, job_output, list_agents, read, read_image, send_message, skill, subagent, subagent_fork, todo_write, update_goal, web_fetch, web_search, and workflow.\n\nThere is no bash/shell execution capability available.\n\nBASH_UNAVAILABLE\nDONE_T3"}
+{"type":"status","phase":"step_end","turn":1,"step":1,"usage":{"inputTokens":7659,"outputTokens":98,"totalTokens":7757}}
+{"type":"status","phase":"turn_end","turn":1,"reason":{"kind":"completed"}}
+{"type":"final","text":"I don't have access to a bash tool. The available tools are: create_goal, edit, exit_plan_mode, get_goal, glob, grep, interrupt_agent, job_kill, job_list, job_output, list_agents, read, read_image, send_message, skill, subagent, subagent_fork, todo_write, update_goal, web_fetch, web_search, and workflow.\n\nThere is no bash/shell execution capability available.\n\nBASH_UNAVAILABLE\nDONE_T3"}

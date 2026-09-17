@@ -1,0 +1,17 @@
+Full access enabled: fx permission checks disabled
+[notice] [context] skill catalog shortened 199 descriptions: effective=40000 bytes source=compiled default
+
+[notice] skill discovery warning: candidate "/Users/aaron/.codex/skills/peon-ping-config" was skipped because SKILL.md is unreadable or not a regular file; fix the file type or access, then reload skills; candidate "/Users/aaron/.codex/skills/peon-ping-log" was skipped because SKILL.md is unreadable or not a regular file; fix the file type or access, then reload skills; candidate "/Users/aaron/.codex/skills/peon-ping-toggle" was skipped because SKILL.md is unreadable or not a regular file; fix the file type or access, then reload skills; candidate "/Users/aaron/.codex/skills/peon-ping-use" was skipped because SKILL.md is unreadable or not a regular file; fix the file type or access, then reload skills; 6 additional diagnostics omitted; relaunch with FX_TRACE=1 to write a trace log
+● Reading[0m
+● Matching[0m
+● Matching[0m
+Reading /Users/aaron/Downloads/harness-bench/t2/fx/fixture/cli.js
+Matching package.json
+Matching **/*
+● Reading[0m
+Reading /Users/aaron/Downloads/harness-bench/t2/fx/fixture/package.json
+Writing /Users/aaron/Downloads/harness-bench/t2/fx/fixture/cli.js
+Running node cli.js && node cli.js --version && node cli.js foo
+hello
+1.4.2
+hello

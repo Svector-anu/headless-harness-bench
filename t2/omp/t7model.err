@@ -1,0 +1,6 @@
+Model "openrouter/qwen/this-model-does-not-exist-9z" not found
+
+Set an API key environment variable:
+  ANTHROPIC_API_KEY, OPENAI_API_KEY, GEMINI_API_KEY, etc.
+
+Or create /Users/aaron/.omp/agent/models.yml

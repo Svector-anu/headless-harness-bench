@@ -1,0 +1,31 @@
+# External harness source clones (huge, each has its own .git; re-clone from upstream)
+/pi/
+/omp/
+/fx/
+/opencode/
+/crush/
+/dsh/
+
+# Per-run isolated auth / home / state dirs - CONTAIN CREDENTIALS, never commit
+**/home/
+**/home-grok/
+**/home-grok-t3/
+**/.pi/
+**/.crush/
+**/.fx/
+**/.omp/
+
+# Harness state, vaults, locks
+*.db
+*.lock
+**/auth.json
+**/grok-auth.json
+
+# Node deps + regenerable fixtures / scratch
+**/node_modules/
+**/fixture/
+**/fixture_t3/
+**/scratch/
+
+# OS
+.DS_Store

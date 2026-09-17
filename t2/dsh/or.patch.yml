@@ -1,0 +1,21 @@
+# Tier-2 harness-bench overlay: route the headless default model through
+# OpenRouter via the pi-ai adapter, and disable the DeepSeek session-log upload.
+- id: agent-default-model
+  config:
+    provider: openrouter
+    model: qwen/qwen3.7-flash
+
+- id: session-log-deepseek
+  config:
+    enabled: false
+
+- id: llm-pi-ai
+  config:
+    providers:
+      openrouter:
+        displayName: OpenRouter
+        apiKeyEnv: OPENROUTER_API_KEY
+        api: openai-completions
+        baseURL: https://openrouter.ai/api/v1
+        models:
+          - id: qwen/qwen3.7-flash
