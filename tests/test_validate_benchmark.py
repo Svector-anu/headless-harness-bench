@@ -45,6 +45,29 @@ class ValidateBenchmarkTests(unittest.TestCase):
         report.write_text("T1 T2 T3 T4 T5 T6 T7\nTASK SUCCESS", encoding="utf-8")
         self.assertTrue(any("missing T8" in error for error in validate(self.root)))
 
+    def test_token_only_results_and_task_success_are_rejected(self) -> None:
+        report = self.root / "t2" / "fx" / "RESULT.md"
+        report.write_text(
+            "T1 T2 T3 T4 T5 T6 T7 T8\nTASK SUCCESS",
+            encoding="utf-8",
+        )
+        errors = validate(self.root)
+        for test_number in range(1, 9):
+            self.assertTrue(
+                any(f"missing T{test_number} result value" in error for error in errors)
+            )
+        self.assertTrue(any("missing task-success verdict" in error for error in errors))
+
+    def test_empty_result_cells_are_rejected(self) -> None:
+        report = self.root / "t2" / "fx" / "RESULT.md"
+        report.write_text(
+            "\n".join([f"| T{number} | |" for number in range(1, 9)])
+            + "\n| TASK SUCCESS | |",
+            encoding="utf-8",
+        )
+        errors = validate(self.root)
+        self.assertEqual(len(errors), 9)
+
     def test_credential_shaped_artifact_is_rejected(self) -> None:
         (self.root / "t2" / "crush" / "auth.json").write_text("{}", encoding="utf-8")
         self.assertTrue(any("credential-shaped" in error for error in validate(self.root)))

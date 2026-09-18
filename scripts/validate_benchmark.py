@@ -19,6 +19,35 @@ SENSITIVE_NAMES = {
 }
 
 
+def _has_test_result(text: str, test_number: int) -> bool:
+    """Return whether a Markdown table row has a populated result cell."""
+    return bool(
+        re.search(
+            rf"^\s*\|\s*(?:\*{{1,2}})?T{test_number}\b[^|\n]*\|"
+            r"\s*(?:\*{1,2})?[^|\s*]",
+            text,
+            re.IGNORECASE | re.MULTILINE,
+        )
+    )
+
+
+def _has_task_success_verdict(text: str) -> bool:
+    """Return whether task success has an explicit table or heading verdict."""
+    table_verdict = re.search(
+        r"^\s*\|\s*(?:\*{1,2})?task[ -]success(?:\*{1,2})?\s*\|"
+        r"\s*(?:\*{1,2})?[^|\s*]",
+        text,
+        re.IGNORECASE | re.MULTILINE,
+    )
+    heading_verdict = re.search(
+        r"^\s*(?:#{1,6}\s*)?(?:\*{1,2})?task[ -]success(?:\*{1,2})?"
+        r"\s*(?::|-)\s*(?:\*{1,2})?[^\s*]",
+        text,
+        re.IGNORECASE | re.MULTILINE,
+    )
+    return bool(table_verdict or heading_verdict)
+
+
 def validate(root: Path) -> list[str]:
     """Return human-readable validation errors for a repository root."""
     errors: list[str] = []
@@ -35,11 +64,11 @@ def validate(root: Path) -> list[str]:
 
         text = result.read_text(encoding="utf-8")
         for test_number in range(1, 9):
-            if not re.search(rf"\bT{test_number}\b", text, re.IGNORECASE):
+            if not _has_test_result(text, test_number):
                 errors.append(
-                    f"{result.relative_to(root)}: missing T{test_number} result"
+                    f"{result.relative_to(root)}: missing T{test_number} result value"
                 )
-        if not re.search(r"task[ -]success", text, re.IGNORECASE):
+        if not _has_task_success_verdict(text):
             errors.append(f"{result.relative_to(root)}: missing task-success verdict")
 
     evidence_root = root / "t2"
