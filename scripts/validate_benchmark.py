@@ -77,7 +77,8 @@ def validate(root: Path) -> list[str]:
             if not path.is_file():
                 continue
             relative = path.relative_to(root)
-            if path.name.lower() in SENSITIVE_NAMES or path.name.startswith(".env."):
+            normalized_name = path.name.lower()
+            if normalized_name in SENSITIVE_NAMES or normalized_name.startswith(".env."):
                 errors.append(f"credential-shaped file must not be published: {relative}")
             if path.stat().st_size == 0:
                 # Empty captures are valid evidence for startup/cancellation failures.

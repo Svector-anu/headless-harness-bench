@@ -72,6 +72,12 @@ class ValidateBenchmarkTests(unittest.TestCase):
         (self.root / "t2" / "crush" / "auth.json").write_text("{}", encoding="utf-8")
         self.assertTrue(any("credential-shaped" in error for error in validate(self.root)))
 
+    def test_credential_shaped_artifact_is_case_insensitive(self) -> None:
+        (self.root / "t2" / "crush" / ".ENV.production").write_text(
+            "SECRET=value", encoding="utf-8"
+        )
+        self.assertTrue(any("credential-shaped" in error for error in validate(self.root)))
+
 
 if __name__ == "__main__":
     unittest.main()
